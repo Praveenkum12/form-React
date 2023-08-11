@@ -1,13 +1,175 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  line-height: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(205,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='2'%3E%3Cpath transform='translate(-23.8 -13.6) rotate(-13.6 1409 581) scale(0.898)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='4' transform='translate(-85 34) rotate(-6.8 800 450) scale(0.983)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(-23.8 51) rotate(-85 401 736) scale(0.983)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='4'%3E%3Cpath transform='translate(204 20.4) rotate(-5.1 150 345) scale(1.034)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='8' transform='translate(51 -102) rotate(-122.4 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-13.6 -13.6) rotate(-20.4 1400 132) scale(0.83)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form {
+  width: 60rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #777;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f1f3f4;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box-3 {
+  grid-column: 1 / -1;
+}
+
+.gender-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.gender-in {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.hobbies-box {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.hobbies-in {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.range {
+  display: flex;
+}
+
+.range-bar {
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.last-box {
+  grid-column: 1/-1;
+}
+
+form {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.form-footer {
+  background-color: #f1f3f4;
+  padding: 1rem 2rem;
+  text-align: right;
+}
+
+.input-box > label {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: #35d30e;
+}
+
+textarea {
+  resize: none;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+textarea {
+  outline: none;
+  padding: 0.5rem;
+}
+
+.age-input {
+  border: 1px solid #000;
+  width: 18rem;
+}
+
+.pass {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.range-output {
+  padding: 1rem;
+  background-color: #35d30e;
+  color: #fff;
+  width: 4.2rem;
+  border-radius: 5px;
+}
+
+.form-footer {
+  grid-column: 1/-1;
+}
+
+.btn-create {
+  padding: 0.5rem 1rem;
+  background-color: #35d30e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-create:hover {
+  background-color: #2eb70c;
+  transform: translateY(-1px);
+}
+
+.btn-create:active {
+  transform: translateY(0);
+}
+
+.gender-in label,
+.hobbies-in label {
+  font-size: 1.4rem;
+}
+
+select {
+  outline: none;
 }
